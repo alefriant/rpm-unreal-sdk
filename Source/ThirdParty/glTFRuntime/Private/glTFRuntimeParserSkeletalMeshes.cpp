@@ -1,3 +1,11 @@
+
+// Missing physics headers for UE5.5
+#if ENGINE_MAJOR_VERSION >= 5 && ENGINE_MINOR_VERSION >= 5
+#include "PhysicsEngine/SkeletalBodySetup.h"
+#include "PhysicsEngine/BodySetup.h"
+#include "PhysicsEngine/AggregateGeom.h"
+#include "PhysicsEngine/PhysicsAsset.h"
+#endif
 // Copyright 2020-2023, Roberto De Ioris.
 
 #include "glTFRuntimeParser.h"
@@ -43,6 +51,15 @@
 #if ENGINE_MAJOR_VERSION > 4 || ENGINE_MINOR_VERSION > 25
 #include "UObject/SavePackage.h"
 #endif
+
+// Missing physics headers for UE5.5
+#if ENGINE_MAJOR_VERSION >= 5 && ENGINE_MINOR_VERSION >= 5
+#include "PhysicsEngine/SkeletalBodySetup.h"
+#include "PhysicsEngine/BodySetup.h"
+#include "PhysicsEngine/AggregateGeom.h"
+#include "PhysicsEngine/PhysicsAsset.h"
+#endif
+
 
 #if ENGINE_MAJOR_VERSION >= 5 && ENGINE_MINOR_VERSION >= 2
 #define BONE_INFLUENCE_TYPE uint16
